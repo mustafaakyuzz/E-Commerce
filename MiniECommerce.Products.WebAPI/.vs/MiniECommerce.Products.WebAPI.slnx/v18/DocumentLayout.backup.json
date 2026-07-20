@@ -3,32 +3,40 @@
   "WorkspaceRootPath": "C:\\Users\\Mustafa\\OneDrive\\Desktop\\mini-e-commerce-microservices\\MiniECommerce.Products.WebAPI\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{FB8F5838-C908-4F1F-ADD2-5D4E3C775B67}|MiniECommerce.Products.WebAPI.csproj|c:\\users\\mustafa\\onedrive\\desktop\\mini-e-commerce-microservices\\miniecommerce.products.webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FB8F5838-C908-4F1F-ADD2-5D4E3C775B67}|MiniECommerce.Products.WebAPI.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FEE3FABA-A588-A991-E346-EDA98513384B}|MiniECommerce.Products.WebAPI.csproj|c:\\users\\mustafa\\onedrive\\desktop\\mini-e-commerce-microservices\\miniecommerce.products.webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FEE3FABA-A588-A991-E346-EDA98513384B}|MiniECommerce.Products.WebAPI.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FB8F5838-C908-4F1F-ADD2-5D4E3C775B67}|MiniECommerce.Products.WebAPI.csproj|c:\\users\\mustafa\\onedrive\\desktop\\mini-e-commerce-microservices\\miniecommerce.products.webapi\\dtos\\createproductdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FB8F5838-C908-4F1F-ADD2-5D4E3C775B67}|MiniECommerce.Products.WebAPI.csproj|solutionrelative:dtos\\createproductdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FEE3FABA-A588-A991-E346-EDA98513384B}|MiniECommerce.Products.WebAPI.csproj|c:\\users\\mustafa\\onedrive\\desktop\\mini-e-commerce-microservices\\miniecommerce.products.webapi\\dtos\\changeproductstockdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FEE3FABA-A588-A991-E346-EDA98513384B}|MiniECommerce.Products.WebAPI.csproj|solutionrelative:dtos\\changeproductstockdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FB8F5838-C908-4F1F-ADD2-5D4E3C775B67}|MiniECommerce.Products.WebAPI.csproj|c:\\users\\mustafa\\onedrive\\desktop\\mini-e-commerce-microservices\\miniecommerce.products.webapi\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{FB8F5838-C908-4F1F-ADD2-5D4E3C775B67}|MiniECommerce.Products.WebAPI.csproj|solutionrelative:appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{FEE3FABA-A588-A991-E346-EDA98513384B}|MiniECommerce.Products.WebAPI.csproj|c:\\users\\mustafa\\onedrive\\desktop\\mini-e-commerce-microservices\\miniecommerce.products.webapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{FEE3FABA-A588-A991-E346-EDA98513384B}|MiniECommerce.Products.WebAPI.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FB8F5838-C908-4F1F-ADD2-5D4E3C775B67}|MiniECommerce.Products.WebAPI.csproj|c:\\users\\mustafa\\onedrive\\desktop\\mini-e-commerce-microservices\\miniecommerce.products.webapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{FB8F5838-C908-4F1F-ADD2-5D4E3C775B67}|MiniECommerce.Products.WebAPI.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{FEE3FABA-A588-A991-E346-EDA98513384B}|MiniECommerce.Products.WebAPI.csproj|c:\\users\\mustafa\\onedrive\\desktop\\mini-e-commerce-microservices\\miniecommerce.products.webapi\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{FEE3FABA-A588-A991-E346-EDA98513384B}|MiniECommerce.Products.WebAPI.csproj|solutionrelative:appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FB8F5838-C908-4F1F-ADD2-5D4E3C775B67}|MiniECommerce.Products.WebAPI.csproj|c:\\users\\mustafa\\onedrive\\desktop\\mini-e-commerce-microservices\\miniecommerce.products.webapi\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{FB8F5838-C908-4F1F-ADD2-5D4E3C775B67}|MiniECommerce.Products.WebAPI.csproj|solutionrelative:properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{FEE3FABA-A588-A991-E346-EDA98513384B}|MiniECommerce.Products.WebAPI.csproj|c:\\users\\mustafa\\onedrive\\desktop\\mini-e-commerce-microservices\\miniecommerce.products.webapi\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{FEE3FABA-A588-A991-E346-EDA98513384B}|MiniECommerce.Products.WebAPI.csproj|solutionrelative:properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FB8F5838-C908-4F1F-ADD2-5D4E3C775B67}|MiniECommerce.Products.WebAPI.csproj|c:\\users\\mustafa\\onedrive\\desktop\\mini-e-commerce-microservices\\miniecommerce.products.webapi\\context\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FB8F5838-C908-4F1F-ADD2-5D4E3C775B67}|MiniECommerce.Products.WebAPI.csproj|solutionrelative:context\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FEE3FABA-A588-A991-E346-EDA98513384B}|MiniECommerce.Products.WebAPI.csproj|c:\\users\\mustafa\\onedrive\\desktop\\mini-e-commerce-microservices\\miniecommerce.products.webapi\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{FEE3FABA-A588-A991-E346-EDA98513384B}|MiniECommerce.Products.WebAPI.csproj|solutionrelative:dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FB8F5838-C908-4F1F-ADD2-5D4E3C775B67}|MiniECommerce.Products.WebAPI.csproj|c:\\users\\mustafa\\onedrive\\desktop\\mini-e-commerce-microservices\\miniecommerce.products.webapi\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FB8F5838-C908-4F1F-ADD2-5D4E3C775B67}|MiniECommerce.Products.WebAPI.csproj|solutionrelative:models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FEE3FABA-A588-A991-E346-EDA98513384B}|MiniECommerce.Products.WebAPI.csproj|c:\\users\\mustafa\\onedrive\\desktop\\mini-e-commerce-microservices\\miniecommerce.products.webapi\\dtos\\createproductdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FEE3FABA-A588-A991-E346-EDA98513384B}|MiniECommerce.Products.WebAPI.csproj|solutionrelative:dtos\\createproductdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FEE3FABA-A588-A991-E346-EDA98513384B}|MiniECommerce.Products.WebAPI.csproj|c:\\users\\mustafa\\onedrive\\desktop\\mini-e-commerce-microservices\\miniecommerce.products.webapi\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FEE3FABA-A588-A991-E346-EDA98513384B}|MiniECommerce.Products.WebAPI.csproj|solutionrelative:models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FEE3FABA-A588-A991-E346-EDA98513384B}|MiniECommerce.Products.WebAPI.csproj|c:\\users\\mustafa\\onedrive\\desktop\\mini-e-commerce-microservices\\miniecommerce.products.webapi\\context\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FEE3FABA-A588-A991-E346-EDA98513384B}|MiniECommerce.Products.WebAPI.csproj|solutionrelative:context\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,8 +46,33 @@
       "DocumentGroups": [
         {
           "DockedWidth": 429,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 6,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ChangeProductStockDto.cs",
+              "DocumentMoniker": "C:\\Users\\Mustafa\\OneDrive\\Desktop\\mini-e-commerce-microservices\\MiniECommerce.Products.WebAPI\\Dtos\\ChangeProductStockDto.cs",
+              "RelativeDocumentMoniker": "Dtos\\ChangeProductStockDto.cs",
+              "ToolTip": "C:\\Users\\Mustafa\\OneDrive\\Desktop\\mini-e-commerce-microservices\\MiniECommerce.Products.WebAPI\\Dtos\\ChangeProductStockDto.cs",
+              "RelativeToolTip": "Dtos\\ChangeProductStockDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-20T17:37:58.397Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Dockerfile",
+              "DocumentMoniker": "C:\\Users\\Mustafa\\OneDrive\\Desktop\\mini-e-commerce-microservices\\MiniECommerce.Products.WebAPI\\Dockerfile",
+              "RelativeDocumentMoniker": "Dockerfile",
+              "ToolTip": "C:\\Users\\Mustafa\\OneDrive\\Desktop\\mini-e-commerce-microservices\\MiniECommerce.Products.WebAPI\\Dockerfile",
+              "RelativeToolTip": "Dockerfile",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-07-15T16:28:46.297Z"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 4,
@@ -48,40 +81,38 @@
               "RelativeDocumentMoniker": "Properties\\launchSettings.json",
               "ToolTip": "C:\\Users\\Mustafa\\OneDrive\\Desktop\\mini-e-commerce-microservices\\MiniECommerce.Products.WebAPI\\Properties\\launchSettings.json",
               "RelativeToolTip": "Properties\\launchSettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAcAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-07-15T12:20:54.778Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-15T12:20:54.778Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\Mustafa\\OneDrive\\Desktop\\mini-e-commerce-microservices\\MiniECommerce.Products.WebAPI\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
               "ToolTip": "C:\\Users\\Mustafa\\OneDrive\\Desktop\\mini-e-commerce-microservices\\MiniECommerce.Products.WebAPI\\appsettings.json",
               "RelativeToolTip": "appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAASAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2026-07-15T11:01:16.483Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "appsettings.Development.json",
               "DocumentMoniker": "C:\\Users\\Mustafa\\OneDrive\\Desktop\\mini-e-commerce-microservices\\MiniECommerce.Products.WebAPI\\appsettings.Development.json",
               "RelativeDocumentMoniker": "appsettings.Development.json",
               "ToolTip": "C:\\Users\\Mustafa\\OneDrive\\Desktop\\mini-e-commerce-microservices\\MiniECommerce.Products.WebAPI\\appsettings.Development.json",
               "RelativeToolTip": "appsettings.Development.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAACTAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAABPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-07-15T11:00:29.538Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-15T11:00:29.538Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
               "Title": "CreateProductDto.cs",
               "DocumentMoniker": "C:\\Users\\Mustafa\\OneDrive\\Desktop\\mini-e-commerce-microservices\\MiniECommerce.Products.WebAPI\\Dtos\\CreateProductDto.cs",
               "RelativeDocumentMoniker": "Dtos\\CreateProductDto.cs",
@@ -89,8 +120,7 @@
               "RelativeToolTip": "Dtos\\CreateProductDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-15T10:40:59.176Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-15T10:40:59.176Z"
             },
             {
               "$type": "Document",
@@ -100,14 +130,14 @@
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Users\\Mustafa\\OneDrive\\Desktop\\mini-e-commerce-microservices\\MiniECommerce.Products.WebAPI\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAQwCMAAABRAAAAAAAAAA==",
+              "ViewState": "AgIAACkAAAAAAAAAAAAQwFIAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-07-15T10:38:04.719Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "Product.cs",
               "DocumentMoniker": "C:\\Users\\Mustafa\\OneDrive\\Desktop\\mini-e-commerce-microservices\\MiniECommerce.Products.WebAPI\\Models\\Product.cs",
               "RelativeDocumentMoniker": "Models\\Product.cs",
@@ -115,12 +145,11 @@
               "RelativeToolTip": "Models\\Product.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-15T10:34:14.697Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-15T10:34:14.697Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 8,
               "Title": "ApplicationDbContext.cs",
               "DocumentMoniker": "C:\\Users\\Mustafa\\OneDrive\\Desktop\\mini-e-commerce-microservices\\MiniECommerce.Products.WebAPI\\Context\\ApplicationDbContext.cs",
               "RelativeDocumentMoniker": "Context\\ApplicationDbContext.cs",
@@ -128,8 +157,7 @@
               "RelativeToolTip": "Context\\ApplicationDbContext.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-15T10:32:16.783Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-07-15T10:32:16.783Z"
             }
           ]
         }
