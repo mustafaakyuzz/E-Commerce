@@ -2,6 +2,8 @@ using Microsoft.EntityFrameworkCore;
 using MiniECommerce.ShoppingCarts.WebAPI.Context;
 using MiniECommerce.ShoppingCarts.WebAPI.Dtos;
 using MiniECommerce.ShoppingCarts.WebAPI.Models;
+using System.Text;
+using System.Text.Json;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,12 +16,14 @@ var app = builder.Build();
 
 app.MapGet("/", () => "Hello World!");
 
-app.MapGet("/getall", async (ApplicationDbContext context, CancellationToken cancellationToken) =>
+app.MapGet("/getall", async (ApplicationDbContext context, IConfiguration configuration, CancellationToken cancellationToken) =>
 {
     List<ShoppingCart> shoppingCarts = await context.ShoppingCarts.ToListAsync(cancellationToken);
 
     HttpClient client = new HttpClient();
-    var message = await client.GetAsync("http://products:8080/getall");
+
+    string productsEndpoint = $"http://{configuration.GetSection("HttpRequest:Products").Value}/getall";
+    var message = await client.GetAsync(productsEndpoint);
 
     Result<List<ProductDto>>? products = new();
 
@@ -52,6 +56,52 @@ app.MapPost("/create", async (CreateShoppingCartDto request, ApplicationDbContex
     await context.SaveChangesAsync(cancellationToken);
 
     return Results.Ok(new Result<string>("Product has been added to Shopping Cart Successfully!"));
+});
+
+app.MapGet("/createOrder", async (ApplicationDbContext context, IConfiguration configuration, CancellationToken cancellationToken) =>
+{
+    List<ShoppingCart> shoppingCarts = await context.ShoppingCarts.ToListAsync(cancellationToken);
+
+    HttpClient client = new HttpClient();
+
+    string productsEndpoint = $"http://{configuration.GetSection("HttpRequest:Products").Value}/getall";
+    var message = await client.GetAsync(productsEndpoint);
+
+    Result<List<ProductDto>>? products = new();
+
+    if (message.IsSuccessStatusCode)
+    {
+        products = await message.Content.ReadFromJsonAsync<Result<List<ProductDto>>>();
+    }
+
+    List<CreateOrderDto> response = shoppingCarts.Select(s => new CreateOrderDto
+    {
+        ProductId = s.ProductId,
+        Quantity = s.Quantity,
+        Price = products.Data!.First(p => p.Id == s.ProductId).Price
+    }).ToList();
+
+    string ordersEndpoint = $"http://{configuration.GetSection("HttpRequest:Orders").Value}/create";
+
+    string stringJson = JsonSerializer.Serialize(response);
+    var content = new StringContent(stringJson, Encoding.UTF8, "application/json");
+
+    var orderMessage = await client.PostAsync(ordersEndpoint, content);
+
+    if (orderMessage.IsSuccessStatusCode)
+    {
+        List<ChangeProductStockDto> changeProductStockDtos = shoppingCarts.Select(s => new ChangeProductStockDto(s.ProductId, s.Quantity)).ToList();
+
+        string changeProductEndpoint = $"http://{configuration.GetSection("HttpRequest:Products").Value}/change-product-stock";
+        string productStringJson = JsonSerializer.Serialize(changeProductStockDtos);
+        var productsContent = new StringContent(productStringJson, Encoding.UTF8, "application/json");
+
+        await client.PostAsync(changeProductEndpoint, productsContent);
+
+        context.RemoveRange(shoppingCarts);
+        await context.SaveChangesAsync(cancellationToken);
+    }
+    return Results.Ok(new Result<string>("Order created successfully"));
 });
 
 using (var scoped = app.Services.CreateScope())

@@ -1,3 +1,4 @@
+using Azure.Core;
 using Bogus;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.EntityFrameworkCore;
@@ -64,6 +65,22 @@ app.MapPost("/create", async (CreateProductDto request, ApplicationDbContext con
     await context.SaveChangesAsync(cancellationToken);
 
     return Results.Ok(Result<string>.Succeed("Products created successfully"));
+});
+
+app.MapPost("/change-product-stock", async (List<ChangeProductStockDto> request, ApplicationDbContext context, CancellationToken cancellationToken) =>
+{
+    foreach (var item in request)
+    {
+        Product? product = await context.Products.FindAsync(item.ProductId, cancellationToken);
+        if(product is not null)
+        {
+            product.Stock -= item.Quantity;
+        }
+    }
+
+    await context.SaveChangesAsync(cancellationToken);
+
+    return Results.NoContent();
 });
 
 using (var scoped = app.Services.CreateScope())
