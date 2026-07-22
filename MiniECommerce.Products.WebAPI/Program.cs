@@ -5,84 +5,42 @@ using Microsoft.EntityFrameworkCore;
 using MiniECommerce.Products.WebAPI.Context;
 using MiniECommerce.Products.WebAPI.Dtos;
 using MiniECommerce.Products.WebAPI.Models;
+using MiniECommerce.Products.WebAPI.Repositories;
+using MiniECommerce.Products.WebAPI.Services;
 using TS.Result;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// DbContext
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("SqlServer"));
 });
 
+// Generic and Custom Repository DI
+builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+builder.Services.AddScoped<IProductRepository, ProductRepository>();
+
+// Service DI
+builder.Services.AddScoped<IProductService, ProductService>();
+
+// Controller and Swagger
+builder.Services.AddControllers();
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
 var app = builder.Build();
 
-app.MapGet("/", () => "Hello World!");
-
-app.MapGet("/seedData", (ApplicationDbContext context) =>
+// Enable Swagger UI 
+app.UseSwagger();
+app.UseSwaggerUI(c =>
 {
-    for (int i = 0; i < 100; i++)
-    {
-        Faker faker = new();
-
-        Product product = new()
-        {
-            Name = faker.Commerce.ProductName(),
-            Price = Convert.ToDecimal(faker.Commerce.Price()),
-            Stock = faker.Commerce.Random.Int(1,100)
-        };
-        context.Products.Add(product);
-    }
-    context.SaveChanges();
-
-    return Results.Ok(Result<string>.Succeed("Seed Data executed successfully"));
+    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Products API v1");
 });
 
-app.MapGet("/getall", async (ApplicationDbContext context, CancellationToken cancellationToken) =>
-{
-    var products = await context.Products.OrderBy(p => p.Name).ToListAsync(cancellationToken);
-    Result<List<Product>> response = products;
-    return response;
-});
+app.MapControllers();
 
-app.MapPost("/create", async (CreateProductDto request, ApplicationDbContext context, CancellationToken cancellationToken) =>
-{
-    bool isNameExist = await context.Products.AnyAsync(p => p.Name == request.Name, cancellationToken);
-
-    if (isNameExist)
-    {
-        var response = Result<string>.Failure("Product is created before!");
-        return Results.BadRequest(response);
-    }
-
-    Product product = new()
-    {
-        Name = request.Name,
-        Price = request.Price,
-        Stock = request.Stock,
-    };
-
-    await context.AddAsync(product, cancellationToken);
-    await context.SaveChangesAsync(cancellationToken);
-
-    return Results.Ok(Result<string>.Succeed("Products created successfully"));
-});
-
-app.MapPost("/change-product-stock", async (List<ChangeProductStockDto> request, ApplicationDbContext context, CancellationToken cancellationToken) =>
-{
-    foreach (var item in request)
-    {
-        Product? product = await context.Products.FindAsync(item.ProductId, cancellationToken);
-        if(product is not null)
-        {
-            product.Stock -= item.Quantity;
-        }
-    }
-
-    await context.SaveChangesAsync(cancellationToken);
-
-    return Results.NoContent();
-});
-
+// Automatic Migration
 using (var scoped = app.Services.CreateScope())
 {
     var srv = scoped.ServiceProvider;
@@ -90,4 +48,4 @@ using (var scoped = app.Services.CreateScope())
     context.Database.Migrate();
 }
 
-    app.Run();
+app.Run();
