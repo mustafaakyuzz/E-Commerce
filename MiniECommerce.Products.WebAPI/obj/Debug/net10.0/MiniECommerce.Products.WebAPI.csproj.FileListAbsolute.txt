@@ -156,3 +156,10 @@ C:\Users\Mustafa\OneDrive\Desktop\mini-e-commerce-microservices\MiniECommerce.Pr
 C:\Users\Mustafa\OneDrive\Desktop\mini-e-commerce-microservices\MiniECommerce.Products.WebAPI\obj\Debug\net10.0\ref\MiniECommerce.Products.WebAPI.dll
 C:\Users\Mustafa\OneDrive\Desktop\mini-e-commerce-microservices\MiniECommerce.Products.WebAPI\bin\Debug\net10.0\TS.Result.dll
 C:\Users\Mustafa\OneDrive\Desktop\mini-e-commerce-microservices\MiniECommerce.Products.WebAPI\bin\Debug\net10.0\Bogus.dll
+C:\Users\Mustafa\OneDrive\Desktop\mini-e-commerce-microservices\MiniECommerce.Products.WebAPI\bin\Debug\net10.0\Microsoft.AspNetCore.OpenApi.dll
+C:\Users\Mustafa\OneDrive\Desktop\mini-e-commerce-microservices\MiniECommerce.Products.WebAPI\bin\Debug\net10.0\Microsoft.OpenApi.dll
+C:\Users\Mustafa\OneDrive\Desktop\mini-e-commerce-microservices\MiniECommerce.Products.WebAPI\bin\Debug\net10.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Mustafa\OneDrive\Desktop\mini-e-commerce-microservices\MiniECommerce.Products.WebAPI\bin\Debug\net10.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Mustafa\OneDrive\Desktop\mini-e-commerce-microservices\MiniECommerce.Products.WebAPI\bin\Debug\net10.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Mustafa\OneDrive\Desktop\mini-e-commerce-microservices\MiniECommerce.Products.WebAPI\obj\Debug\net10.0\MiniECommerce.Products.WebAPI.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Mustafa\OneDrive\Desktop\mini-e-commerce-microservices\MiniECommerce.Products.WebAPI\obj\Debug\net10.0\MiniECommerce.Products.WebAPI.sourcelink.json

@@ -1,28 +1,26 @@
 [
   {
-    "ContainingType": "Program\u002B\u003C\u003Ec",
-    "Method": "\u003C\u003CMain\u003E$\u003Eb__0_1",
-    "RelativePath": "",
-    "HttpMethod": "GET",
-    "IsController": false,
+    "ContainingType": "MiniECommerce.Products.WebAPI.Controllers.ProductsController",
+    "Method": "ChangeStock",
+    "RelativePath": "api/Products/change-product-stock",
+    "HttpMethod": "POST",
+    "IsController": true,
     "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": [
+    "Parameters": [
       {
-        "Type": "System.String",
-        "MediaTypes": [
-          "text/plain"
-        ],
-        "StatusCode": 200
+        "Name": "request",
+        "Type": "System.Collections.Generic.List\u00601[[MiniECommerce.Products.WebAPI.Dtos.ChangeProductStockDto, MiniECommerce.Products.WebAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "IsRequired": true
       }
-    ]
+    ],
+    "ReturnTypes": []
   },
   {
-    "ContainingType": "Program\u002B\u003C\u003Ec",
-    "Method": "\u003C\u003CMain\u003E$\u003Eb__0_4",
-    "RelativePath": "create",
+    "ContainingType": "MiniECommerce.Products.WebAPI.Controllers.ProductsController",
+    "Method": "Create",
+    "RelativePath": "api/Products/create",
     "HttpMethod": "POST",
-    "IsController": false,
+    "IsController": true,
     "Order": 0,
     "Parameters": [
       {
@@ -31,46 +29,26 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": [
-      {
-        "Type": "System.Void",
-        "MediaTypes": [],
-        "StatusCode": 200
-      }
-    ]
+    "ReturnTypes": []
   },
   {
-    "ContainingType": "Program\u002B\u003C\u003Ec",
-    "Method": "\u003C\u003CMain\u003E$\u003Eb__0_3",
-    "RelativePath": "getall",
+    "ContainingType": "MiniECommerce.Products.WebAPI.Controllers.ProductsController",
+    "Method": "GetAll",
+    "RelativePath": "api/Products/getall",
     "HttpMethod": "GET",
-    "IsController": false,
+    "IsController": true,
     "Order": 0,
     "Parameters": [],
-    "ReturnTypes": [
-      {
-        "Type": "TS.Result.Result\u00601[[System.Collections.Generic.List\u00601[[MiniECommerce.Products.WebAPI.Models.Product, MiniECommerce.Products.WebAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
-        "MediaTypes": [
-          "application/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
+    "ReturnTypes": []
   },
   {
-    "ContainingType": "Program\u002B\u003C\u003Ec",
-    "Method": "\u003C\u003CMain\u003E$\u003Eb__0_2",
-    "RelativePath": "seedData",
+    "ContainingType": "MiniECommerce.Products.WebAPI.Controllers.ProductsController",
+    "Method": "SeedData",
+    "RelativePath": "api/Products/seedData",
     "HttpMethod": "GET",
-    "IsController": false,
+    "IsController": true,
     "Order": 0,
     "Parameters": [],
-    "ReturnTypes": [
-      {
-        "Type": "System.Void",
-        "MediaTypes": [],
-        "StatusCode": 200
-      }
-    ]
+    "ReturnTypes": []
   }
 ]
