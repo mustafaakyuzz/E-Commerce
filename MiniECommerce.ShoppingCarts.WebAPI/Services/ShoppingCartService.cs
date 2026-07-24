@@ -86,7 +86,7 @@ public class ShoppingCartService : IShoppingCartService
         }).ToList();
 
         // Post Order to Order service
-        string ordersEndpoint = $"http://{_configuration.GetSection("HttpRequest:Orders").Value}/create";
+        string ordersEndpoint = $"http://{_configuration.GetSection("HttpRequest:Orders").Value}/api/orders/create";
         string stringJson = JsonSerializer.Serialize(response);
         var content = new StringContent(stringJson, Encoding.UTF8, "application/json");
 
