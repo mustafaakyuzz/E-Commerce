@@ -3,21 +3,26 @@ using Microsoft.IdentityModel.Tokens;
 using MiniECommerce.Gateway.YARP.Context;
 using MiniECommerce.Gateway.YARP.Dtos;
 using MiniECommerce.Gateway.YARP.Models;
+using MiniECommerce.Gateway.YARP.Repositories;
 using MiniECommerce.Gateway.YARP.Services;
 using System.Text;
 using TS.Result;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// CORS
 builder.Services.AddCors();
 
+// DbContext
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
 {
     options.UseNpgsql(builder.Configuration.GetConnectionString("PostgreSql"));
 });
 
+// YARP Reverse Proxy
 builder.Services.AddReverseProxy().LoadFromConfig(builder.Configuration.GetSection("ReverseProxy"));
 
+// JWT Authentication
 builder.Services.AddAuthentication().AddJwtBearer(options =>
 {
     options.TokenValidationParameters = new()
@@ -34,53 +39,33 @@ builder.Services.AddAuthentication().AddJwtBearer(options =>
 
 builder.Services.AddAuthorization();
 
+// DI Registrations
+builder.Services.AddScoped<JwtProvider>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IAuthService, AuthService>();
+
+// Controllers & Swagger
+builder.Services.AddControllers();
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
 var app = builder.Build();
 
 app.UseCors(x => x.AllowAnyHeader().AllowAnyOrigin().AllowAnyMethod());
 
-app.MapGet("/", () => "Hello World!");
-
-// Register
-app.MapPost("/auth/register", async (RegisterDto request, ApplicationDbContext context, CancellationToken cancellationToken) =>
+if (app.Environment.IsDevelopment())
 {
-    bool isUserNameExist = await context.Users.AnyAsync(p => p.UserName == request.UserName, cancellationToken);
-    if (isUserNameExist)
-    {
-        return Results.BadRequest(Result<string>.Failure("This Username is already in use"));
-    }
-    User user = new()
-    {
-        UserName = request.UserName,
-        Password = request.Password,
-    };
-
-    await context.AddAsync(user, cancellationToken);
-    await context.SaveChangesAsync(cancellationToken);
-
-    return Results.Ok(Result<string>.Succeed("User Registeration is successfull"));
-});
-
-// Login
-app.MapPost("/auth/login", async (LoginDto request, ApplicationDbContext context, CancellationToken cancellationToken) =>
-{
-    User? user = await context.Users.FirstOrDefaultAsync(p => p.UserName == request.UserName, cancellationToken);
-    if (user is null)
-    {
-        Results.Ok(Result<string>.Failure("User cannot found"));
-    }
-
-    // Generate Token
-    JwtProvider jwtProvider = new(builder.Configuration);
-    string token = jwtProvider.createToken(user);
-
-    return Results.Ok(Result<string>.Succeed(token));
-});
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
 
 app.UseAuthentication();
 app.UseAuthorization();
 
+app.MapControllers();
 app.MapReverseProxy();
 
+// Auto Migration
 using (var scope = app.Services.CreateScope())
 {
     var srv = scope.ServiceProvider;
