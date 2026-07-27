@@ -8,11 +8,13 @@ namespace MiniECommerce.Gateway.YARP.Services;
 public class AuthService : IAuthService
 {
     private readonly IUserRepository _userRepository;
+    private readonly IUnitOfWork _unitOfWork;
     private readonly JwtProvider _jwtProvider;
 
-    public AuthService(IUserRepository userRepository, JwtProvider jwtProvider)
+    public AuthService(IUserRepository userRepository, IUnitOfWork unitOfWork, JwtProvider jwtProvider)
     {
         _userRepository = userRepository;
+        _unitOfWork = unitOfWork;
         _jwtProvider = jwtProvider;
     }
 
@@ -31,7 +33,7 @@ public class AuthService : IAuthService
         };
 
         await _userRepository.AddAsync(user, cancellationToken);
-        await _userRepository.SaveChangesAsync(cancellationToken);
+        await _unitOfWork.SaveChangesAsync(cancellationToken);
 
         return Result<string>.Succeed("User Registeration is successfull");
     }

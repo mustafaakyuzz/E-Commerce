@@ -24,6 +24,9 @@ builder.Services.AddScoped<IProductRepository, ProductRepository>();
 // Service DI
 builder.Services.AddScoped<IProductService, ProductService>();
 
+// Add Unit Of Work
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+
 // Controller and Swagger
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();

@@ -12,5 +12,4 @@ public interface IGenericRepository<T> where T : BaseEntity
     Task AddRangeAsync(IEnumerable<T> entities, CancellationToken cancellationToken = default);
     void Update(T entity);
     void Delete(T entity);
-    Task SaveChangesAsync(CancellationToken cancellationToken = default);
 }

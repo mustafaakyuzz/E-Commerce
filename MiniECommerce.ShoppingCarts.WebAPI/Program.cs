@@ -24,6 +24,9 @@ builder.Services.AddScoped<IShoppingCartRepository, ShoppingCartRepository>();
 // Service Registration
 builder.Services.AddScoped<IShoppingCartService, ShoppingCartService>();
 
+// Unit Of Work Registeration
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+
 // Controllers & Swagger
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();

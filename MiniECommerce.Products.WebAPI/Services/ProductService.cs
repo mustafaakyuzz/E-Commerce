@@ -9,10 +9,12 @@ namespace MiniECommerce.Products.WebAPI.Services;
 public class ProductService : IProductService
 {
     private readonly IProductRepository _productRepository;
+    private readonly IUnitOfWork _unitOfWork;
 
-    public ProductService(IProductRepository productRepository)
+    public ProductService(IProductRepository productRepository, IUnitOfWork unitOfWork)
     {
         _productRepository = productRepository;
+        _unitOfWork = unitOfWork;
     }
     public async Task<Result<string>> SeedDataAsync(CancellationToken cancellationToken)
     {
@@ -29,7 +31,7 @@ public class ProductService : IProductService
             products.Add(product);
         }
         await _productRepository.AddRangeAsync(products, cancellationToken);
-        await _productRepository.SaveChangesAsync(cancellationToken);
+        await _unitOfWork.SaveChangesAsync(cancellationToken);
 
         return Result<string>.Succeed("Seed Data executed successfully");
     }
@@ -55,7 +57,7 @@ public class ProductService : IProductService
         };
 
         await _productRepository.AddAsync(product, cancellationToken);
-        await _productRepository.SaveChangesAsync(cancellationToken);
+        await _unitOfWork.SaveChangesAsync(cancellationToken);
 
         return Result<string>.Succeed("Product is created successfully");
     }
@@ -69,7 +71,7 @@ public class ProductService : IProductService
                 product.Stock -= item.Quantity;
             }
         }
-        await _productRepository.SaveChangesAsync(cancellationToken);
+        await _unitOfWork.SaveChangesAsync(cancellationToken);
         return Result<string>.Succeed("");
     }
 }

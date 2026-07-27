@@ -11,15 +11,18 @@ public class ShoppingCartService : IShoppingCartService
     private readonly IShoppingCartRepository _shoppingCartRepository;
     private readonly IHttpClientFactory _httpClientFactory;
     private readonly IConfiguration _configuration;
+    private readonly IUnitOfWork _unitOfWork;
 
     public ShoppingCartService(
         IShoppingCartRepository shoppingCartRepository,
         IHttpClientFactory httpClientFactory,
-        IConfiguration configuration)
+        IConfiguration configuration,
+        IUnitOfWork unitOfWork)
     {
         _shoppingCartRepository = shoppingCartRepository;
         _httpClientFactory = httpClientFactory;
         _configuration = configuration;
+        _unitOfWork = unitOfWork;
     }
 
     public async Task<Result<List<ShoppingCartDto>>> GetAllAsync(CancellationToken cancellationToken)
@@ -57,7 +60,7 @@ public class ShoppingCartService : IShoppingCartService
         };
 
         await _shoppingCartRepository.AddAsync(shoppingCart, cancellationToken);
-        await _shoppingCartRepository.SaveChangesAsync(cancellationToken);
+        await _unitOfWork.SaveChangesAsync(cancellationToken);
 
         return new Result<string>("Product has been added to Shopping Cart Successfully!");
     }
@@ -107,7 +110,7 @@ public class ShoppingCartService : IShoppingCartService
 
             // Clear Shopping Cart
             _shoppingCartRepository.DeleteRange(shoppingCarts);
-            await _shoppingCartRepository.SaveChangesAsync(cancellationToken);
+            await _unitOfWork.SaveChangesAsync(cancellationToken);
         }
         return new Result<string>("Order created successfully");
     }

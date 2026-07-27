@@ -26,6 +26,4 @@ public class GenericRepository<T> : IGenericRepository<T> where T : BaseEntity
     public void Update(T entity) => _context.Set<T>().Update(entity);
     public void Delete(T entity) => _context.Set<T>().Remove(entity);
     public void DeleteRange(IEnumerable<T> entities) => _context.Set<T>().RemoveRange(entities);
-    public async Task SaveChangesAsync(CancellationToken cancellationToken = default)
-        => await _context.SaveChangesAsync(cancellationToken);
 }

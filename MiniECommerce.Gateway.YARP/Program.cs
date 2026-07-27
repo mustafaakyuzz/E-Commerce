@@ -44,6 +44,9 @@ builder.Services.AddScoped<JwtProvider>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IAuthService, AuthService>();
 
+// Unit Of Work Registeration
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+
 // Controllers & Swagger
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
