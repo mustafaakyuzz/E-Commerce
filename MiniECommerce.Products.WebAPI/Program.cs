@@ -17,9 +17,20 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("SqlServer"));
 });
 
+// Redis Cache Service
+builder.Services.AddStackExchangeRedisCache(options =>
+{
+    options.Configuration = builder.Configuration.GetConnectionString("Redis");
+    options.InstanceName = "ProductsCache_";
+});
+
 // Generic and Custom Repository DI
 builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
+
+// Decorator Pattern
+// IProductRepository wraps ProductsRepository, with CachedProductRepository
+builder.Services.Decorate<IProductRepository, CachedProductRepository>();
 
 // Service DI
 builder.Services.AddScoped<IProductService, ProductService>();
