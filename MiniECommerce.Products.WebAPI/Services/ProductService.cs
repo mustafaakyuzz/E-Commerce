@@ -69,6 +69,9 @@ public class ProductService : IProductService
             if(product is not null)
             {
                 product.Stock -= item.Quantity;
+
+                // Update cache.
+                _productRepository.Update(product);
             }
         }
         await _unitOfWork.SaveChangesAsync(cancellationToken);
