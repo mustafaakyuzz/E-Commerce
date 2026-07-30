@@ -1,0 +1,108 @@
+version: "3.9"
+
+services:
+  # ---------------- Databases ----------------
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: sqlserver
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: "Udemy#123"
+    ports:
+      - "1433:1433"
+    volumes:
+      - mssqldata:/var/opt/mssql
+
+  postgres-carts:
+    image: postgres:16
+    container_name: postgres-carts
+    environment:
+      POSTGRES_PASSWORD: "1"
+      POSTGRES_DB: "shoppingcartsdb"
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-carts-data:/var/lib/postgresql/data
+
+  postgres-users:
+    image: postgres:16
+    container_name: postgres-users
+    environment:
+      POSTGRES_PASSWORD: "1"
+      POSTGRES_DB: "usersdb"
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres-users-data:/var/lib/postgresql/data
+
+  mongo:
+    image: mongo:latest
+    container_name: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodbdata:/data/db
+
+  redis:
+    image: redis:latest
+    container_name: redis
+    ports:
+      - "6379:6379"
+
+  # ---------------- App Services ----------------
+  products:
+    build:
+      context: ./MiniECommerce.Products.WebAPI
+    container_name: products
+    environment:
+      ASPNETCORE_URLS: "http://+:8080"
+    ports:
+      - "5001:8080"
+    depends_on:
+      - sqlserver
+      - redis
+
+  orders:
+    build:
+      context: ./MiniECommerce.Orders.WebAPI
+    container_name: orders
+    environment:
+      ASPNETCORE_URLS: "http://+:8080"
+    ports:
+      - "5003:8080"
+    depends_on:
+      - mongo
+      - products
+
+  carts:
+    build:
+      context: ./MiniECommerce.ShoppingCarts.WebAPI
+    container_name: carts
+    environment:
+      ASPNETCORE_URLS: "http://+:8080"
+    ports:
+      - "5002:8080"
+    depends_on:
+      - postgres-carts
+      - products
+      - orders
+
+  gateway:
+    build:
+      context: ./MiniECommerce.Gateway.YARP
+    container_name: gateway
+    environment:
+      ASPNETCORE_URLS: "http://+:8080"
+    ports:
+      - "5000:8080"
+    depends_on:
+      - postgres-users
+      - products
+      - orders
+      - carts
+
+volumes:
+  mssqldata:
+  postgres-carts-data:
+  postgres-users-data:
+  mongodbdata:
