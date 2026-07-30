@@ -41,7 +41,7 @@ public class OrderService : IOrderService
                 ProductId = order.ProductId,
                 Quantity = order.Quantity,
                 Price = order.Price,
-                ProductName = products!.Data!.First(p => p.Id == order.ProductId).Name
+                ProductName = products?.Data?.FirstOrDefault(p => p.Id == order.ProductId)?.Name ?? "N/A"
             };
             orderDtos.Add(orderDto);
         }
