@@ -40,9 +40,9 @@ public class AuthService : IAuthService
     public async Task<Result<string>> LoginAsync(LoginDto request, CancellationToken cancellationToken = default)
     {
         User? user = await _userRepository.GetByUsernameAsync(request.UserName, cancellationToken);
-        if(user is null)
+        if(user is null || user.Password != request.Password)
         {
-            return Result<string>.Failure("User cannot found");
+            return Result<string>.Failure("Username or Password is invalid.");
         }
         string token = _jwtProvider.createToken(user);
 
